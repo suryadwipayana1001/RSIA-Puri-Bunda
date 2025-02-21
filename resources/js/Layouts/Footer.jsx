@@ -6,7 +6,7 @@ function Footer() {
             <div className="float-right d-none d-sm-block">
                 <b>Version</b> 1.0.0
             </div>
-            <strong>Manajemen Karyawan </strong> RSIA Puri Bunda 2024
+            <strong>Manajemen Karyawan </strong> RSIA Puri Bunda 2025
         </footer>
     );
 }
