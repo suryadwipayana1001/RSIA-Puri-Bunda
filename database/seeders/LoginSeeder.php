@@ -21,10 +21,10 @@ class LoginSeeder extends Seeder
 
         $logins = [];
 
-        for ($i = 0; $i < 200; $i++) {
+        for ($i = 0; $i < 170; $i++) {
             $logins[] = [
                 'karyawan_id'   => $faker->randomElement($karyawanIds),
-                'tanggal_login' => $faker->dateTimeBetween('2025-02-01', '2025-02-28')->format('Y-m-d'),
+                'tanggal_login' => $faker->dateTimeBetween('2025-02-19', '2025-02-21')->format('Y-m-d'),
             ];
         }
 
