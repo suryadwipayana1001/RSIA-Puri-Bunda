@@ -9,7 +9,7 @@ class ApiKaryawanController extends Controller
 {
     public function index()
     {
-        $karyawan = Karyawan::with(['jabatans', 'unit'])->get();
+        $karyawan = Karyawan::with(['jabatans', 'unit'])->latest()->get();
 
         return response()->json([
             'success' => true,

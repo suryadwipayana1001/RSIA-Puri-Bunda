@@ -4,7 +4,7 @@ import { Inertia } from '@inertiajs/inertia';
 import Header from '../../Layouts/Header';
 import Sidebar from '../../Layouts/Sidebar';
 import Footer from '../../Layouts/Footer';
-function CreateUnit({ auth }) {
+function CreateUnit() {
     const { errors } = usePage().props;
     const [nama, setNama] = useState('');
     const storeUnit = async (e) => {

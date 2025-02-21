@@ -38,7 +38,7 @@ function Login() {
                                     <form onSubmit={storeLogin}>
                                         <div className="mb-3">
                                             <label className="form-label">Username</label>
-                                            <input className="form-control" onChange={(e) => setUsername(e.target.value)} placeholder="Email" />
+                                            <input className="form-control" onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
                                         </div>
                                         {errors.username && (
                                             <div className="alert alert-danger">

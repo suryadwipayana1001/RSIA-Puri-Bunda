@@ -12,10 +12,10 @@ export default function ModalDelete(props) {
                     Apakah anda yakin menghapus : {props.nama}
                 </Modal.Body>
                 <Modal.Footer>
-                    <button className="btn btn-red" onClick={props.close}>
+                    <button className="btn btn-warning" onClick={props.close}>
                         Tidak
                     </button>
-                    <button className="btn btn-orange" onClick={props.submit}>
+                    <button className="btn btn-danger" onClick={props.submit}>
                         Iya
                     </button>
                 </Modal.Footer>

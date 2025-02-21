@@ -14,25 +14,23 @@ class ApiDashboardController extends Controller
 {
     public function index(Request $request)
     {
-        // Ambil filter tanggal jika ada
+
         $tanggalBergabung = $request->input('tanggal_bergabung');
         $tanggalLogin = $request->input('tanggal_login');
 
-        // Query untuk menghitung jumlah karyawan berdasarkan tanggal_bergabung (jika ada)
         $jumlahKaryawan = Karyawan::when($tanggalBergabung, function ($query) use ($tanggalBergabung) {
             return $query->whereDate('tanggal_bergabung', $tanggalBergabung);
         })->count();
 
-        // Query untuk menghitung jumlah login berdasarkan tanggal_login (jika ada)
+
         $jumlahLogin = Login::when($tanggalLogin, function ($query) use ($tanggalLogin) {
             return $query->whereDate('tanggal_login', $tanggalLogin);
         })->count();
 
-        // Hitung jumlah unit dan jabatan (tidak perlu filter karena tidak berdasarkan tanggal)
+
         $jumlahUnit = Unit::count();
         $jumlahJabatan = Jabatan::count();
 
-        // Top 10 user dengan login terbanyak (>25 kali) berdasarkan filter tanggal login
         $topUsers = Login::select('karyawan_id', DB::raw('COUNT(*) as total_login'))
             ->when($tanggalLogin, function ($query) use ($tanggalLogin) {
                 return $query->whereDate('tanggal_login', $tanggalLogin);

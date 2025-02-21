@@ -57,7 +57,6 @@ function EditKaryawan({ auth, karyawan, units, jabatans }) {
             nama: inputValue
         }, {
             onSuccess: (page) => {
-                //Mengambil value unit terbaru
                 const newUnit = page.props.units.find(unit => unit.nama === inputValue);
                 const newOption = { value: newUnit.id, label: newUnit.nama };
                 setUnit(newOption);
@@ -88,8 +87,8 @@ function EditKaryawan({ auth, karyawan, units, jabatans }) {
 
     return (
         <>
-            <Header/>
-            <Sidebar active="karyawan"/>
+            <Header />
+            <Sidebar active="karyawan" />
             <div className="content-wrapper">
                 <section className="content-header">
                     <div className="container-fluid">
@@ -118,24 +117,24 @@ function EditKaryawan({ auth, karyawan, units, jabatans }) {
                                 <div className="form-group">
                                     <label>Unit</label>
                                     <CreatableSelect
-                                    value={unit}
-                                    onCreateOption={handleCreateNewUnit}
-                                    onChange={handleChangeUnit}
-                                    options={unitOptions}
-                                    isSearchable={true}
-                                    placeholder="Pilih atau Tambah Unit"
-                                    formatCreateLabel={(inputValue) => `Tambah Unit: "${inputValue}"`}/>
+                                        value={unit}
+                                        onCreateOption={handleCreateNewUnit}
+                                        onChange={handleChangeUnit}
+                                        options={unitOptions}
+                                        isSearchable={true}
+                                        placeholder="Pilih atau Tambah Unit"
+                                        formatCreateLabel={(inputValue) => `Tambah Unit: "${inputValue}"`} />
                                 </div>
                                 <div className="form-group">
                                     <label>Jabatan</label>
                                     <CreatableSelect
-                                    isMulti
-                                    options={jabatanOptions}
-                                    value={selectedJabatans}
-                                    onCreateOption={handleCreateNewJabatan}
-                                    onChange={handleJabatanChange}
-                                    placeholder="Pilih atau Tambah Jabatan"
-                                    formatCreateLabel={(inputValue) => `Tambah Jabatan: "${inputValue}"`}
+                                        isMulti
+                                        options={jabatanOptions}
+                                        value={selectedJabatans}
+                                        onCreateOption={handleCreateNewJabatan}
+                                        onChange={handleJabatanChange}
+                                        placeholder="Pilih atau Tambah Jabatan"
+                                        formatCreateLabel={(inputValue) => `Tambah Jabatan: "${inputValue}"`}
                                     />
                                 </div>
                                 <div className="form-group">

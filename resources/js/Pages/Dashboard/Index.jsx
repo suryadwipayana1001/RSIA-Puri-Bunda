@@ -15,7 +15,6 @@ function Dashboard() {
     const [formattedDate, setFormattedDate] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    // Handle perubahan tanggal
     const handleDateChange = (selectedDate) => {
         setDate(selectedDate);
         if (selectedDate) {
@@ -25,7 +24,6 @@ function Dashboard() {
         }
     };
 
-    // Fetch data dari API dengan filter
     const fetchData = async (filterDate = null) => {
         setLoading(true);
         try {
@@ -39,17 +37,14 @@ function Dashboard() {
         setLoading(false);
     };
 
-    // Panggil API pertama kali tanpa filter
     useEffect(() => {
         fetchData();
     }, []);
 
-    // Handle filter berdasarkan tanggal
     const handleFilter = () => {
         fetchData(formattedDate);
     };
 
-    // Handle reset filter
     const handleReset = () => {
         setDate(null);
         setFormattedDate(null);

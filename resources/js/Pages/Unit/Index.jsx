@@ -27,6 +27,7 @@ export default function UnitIndex({ auth, units }) {
     const deleteUnit = async (id) => {
         Inertia.delete(`/unit/${id}`);
         setShowModal(false);
+        window.location.reload();
     };
 
     useEffect(() => {
@@ -73,7 +74,7 @@ export default function UnitIndex({ auth, units }) {
                             <div className="col-12">
                                 <div className="card">
                                     <div className="card-body">
-                                        <a href="/unit/create" className="btn btn-dark-blue btn-md mb-3">Tambah</a>
+                                        <a href="/unit/create" className="btn btn-dark-blue btn-md mb-3">Tambah Data</a>
                                         <table id="example1" className="table table-bordered table-striped">
                                             <thead>
                                                 <tr>

@@ -11,9 +11,6 @@ class Unit extends Model
     protected $table = 'unit';
     protected $fillable = ['nama'];
 
-    /**
-     * Relasi: Unit memiliki banyak karyawan
-     */
     public function karyawans()
     {
         return $this->hasMany(Karyawan::class);

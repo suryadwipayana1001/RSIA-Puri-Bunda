@@ -31,14 +31,12 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            // Ambil data karyawan berdasarkan username yang login
             $karyawan = Karyawan::where('username', $request->username)->first();
 
             if ($karyawan) {
-                // Simpan ke tabel login
                 Login::create([
                     'karyawan_id' => $karyawan->id,
-                    'tanggal_login' => now()->toDateString(), // Format YYYY-MM-DD
+                    'tanggal_login' => now()->toDateString(),
                 ]);
             }
 

@@ -3,7 +3,7 @@ import { usePage } from '@inertiajs/inertia-react';
 import Header from '../../Layouts/Header';
 import Sidebar from '../../Layouts/Sidebar';
 import Footer from '../../Layouts/Footer';
-function ShowUnit({ auth, unit }) {
+function ShowUnit({unit}) {
     const { errors } = usePage().props;
     const [nama, setNama] = useState(unit.nama);
 

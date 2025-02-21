@@ -53,7 +53,6 @@ function CreateKaryawan({ auth, units,jabatans }) {
             nama: inputValue
         }, {
             onSuccess: (page) => {
-                //Mengambil value unit terbaru
                 const newUnit = page.props.units.find(unit => unit.nama === inputValue);
                 const newOption = { value: newUnit.id, label: newUnit.nama };
                 setSelectedUnit(newOption);
